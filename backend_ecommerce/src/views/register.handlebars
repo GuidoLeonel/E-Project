@@ -1,0 +1,44 @@
+<div class="firstContainer">
+  <h1 class="text-center titleCustomizeDos">Registro de Usuario</h1>
+
+  <div class="formContainer shadow p-3 mb-5 rounded">
+    {{! <h3 class="text-center titleCustomizeTres">Crear un nuevo Producto</h3> }}
+    <form id="form" action="/static/register" method="POST">
+
+      <input
+        type="text"
+        required
+        name="first_name"
+        placeholder="Nombre de Usuario"
+      />
+
+      <input type="text" required name="last_name" placeholder="Apellido" />
+
+      <input type="number" required name="age" placeholder="Edad" />
+
+      {{!       <input type="text" required name="status" placeholder="Estado" /> }}
+
+      <input type="email" required name="email" placeholder="Email" />
+
+      <input
+        type="password"
+        required
+        name="password"
+        placeholder="Contraseña"
+      />
+      <input
+        type="password"
+        required
+        name="passwordConfirm"
+        placeholder="Confirmar Contraseña"
+      />
+
+      <button class="btn btn-outline-warning" type="submit">Registrarse</button>
+    </form>
+  </div>
+
+  {{!   <button class="btn btn-outline-warning" type="submit" id="showProds">Mostrar
+    Productos</button>
+
+  <div class="productsContainer" id="prodContainer"></div> }}
+</div>

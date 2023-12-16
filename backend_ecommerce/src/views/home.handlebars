@@ -1,0 +1,46 @@
+<div class="firstContainer">
+  <h3 class="text-center titleCustomize">Productos del Inventario</h3>
+  <div class="productsContainer">
+    {{#each productos}}
+      <div class="boxProd shadow p-3 mb-5 rounded">
+        <h4
+          class="card-title d-flex justify-content-between align-items-center pb-2"
+        >{{this.title}}
+          <a href="/api/products/{{this.id}}" class="link-warning">
+            <i class="bi bi-pencil-square"></i>
+          </a>
+        </h4>
+        <p> <i>Descripcion:</i> {{this.description}} </p>
+        <p> <i>Precio:</i> ${{this.price}} </p>
+        <p> <i>Stock:</i> {{this.stock}} </p>
+        <p> <i>Categoría:</i> {{this.category}} </p>
+        <p> <i>Estado:</i> {{this.status}} </p>
+        <p> <i>Código:</i> {{this.code}} </p>
+        <p> <i>Imagen:</i> {{this.thumbnails}} </p>
+        <form
+          action="/api/products/{{this.id}}?_method=DELETE"
+          method="POST"
+          class="d-flex justify-content-center align-items-center"
+        >
+          <input type="hidden" name="_method" value="DELETE" />
+          <button class="btn btn-outline-danger w-50">Eliminar Producto</button>
+        </form>
+      </div>
+    {{/each}}
+  </div>
+  <div class="paginate-container">
+    <div>
+      <a
+        href="http://localhost:4000/static/home?page={{prev}}"
+        class="btn btn-outline-warning btn-paginate"
+      >Anterior</a>
+    </div>
+    <div>
+      <a
+        href="http://localhost:4000/static/home?page={{next}}"
+        class="btn btn-outline-warning btn-paginate"
+      >Siguiente</a>
+    </div>
+  </div>
+
+</div>

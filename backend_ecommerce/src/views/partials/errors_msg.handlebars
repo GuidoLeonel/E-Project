@@ -1,0 +1,12 @@
+{{#each errors_msg}}
+  <div class="alert alert-danger alert-dismissible fade show m-4" role="alert">
+    <i class="bi bi-exclamation-octagon"></i>
+    {{this.text}}
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="alert"
+      aria-label="Close"
+    ></button>
+  </div>
+{{/each}}

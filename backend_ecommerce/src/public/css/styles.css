@@ -1,0 +1,74 @@
+root {
+  --color-primary: #212426;
+  --color-light-font: #e9e5e5;
+  --color-background-first: ;
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  width: 100vw;
+  background-color: #393d3f;
+}
+
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #212426;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #fdc62288;
+  border-radius: 20px;
+}
+
+.navbar .title {
+  font-size: 28px;
+}
+
+.sizeLogoUser {
+  width: 2rem;
+}
+
+footer {
+  color: #e9e5e5;
+  background: #212426;
+  height: 10em;
+  padding-top: 1rem;
+  text-align: center;
+}
+.navbar {
+  background: #212426;
+  height: 4em;
+  padding-left: 2rem;
+}
+.navbar h2 {
+  color: #9e9e9e;
+}
+.navbar-collapse {
+  justify-content: space-between;
+  padding: 0px 30px;
+}
+
+.customNav a {
+  color: #fdc622;
+}
+.customNav a:hover {
+  color: #6e34bf;
+}
+
+.firstContainer {
+  height: 80vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0px auto;
+  background-color: #393d3f;
+}

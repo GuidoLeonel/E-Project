@@ -1,0 +1,12 @@
+{{#each succes_msg}}
+  <div class="alert alert-success alert-dismissible fade show m-4" role="alert">
+    <i class="bi bi-check-circle-fill"></i>
+    {{this.text}}
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="alert"
+      aria-label="Close"
+    ></button>
+  </div>
+{{/each}}

@@ -1,0 +1,46 @@
+<div class="firstContainer">
+  <h1 class="text-center titleCustomizeDos">Agregar Nuevos Productos</h1>
+
+  <div class="formContainer shadow p-3 mb-5 rounded">
+    <h3 class="text-center titleCustomizeTres">Crear un nuevo Producto</h3>
+    <form id="form" action="/static/new-product" method="POST">
+
+      <input
+        type="text"
+        required
+        name="title"
+        placeholder="Nombre del Producto"
+      />
+
+      <input type="text" required name="category" placeholder="Categoría" />
+
+      <input type="number" required name="price" placeholder="Precio" />
+
+      {{!       <input type="text" required name="status" placeholder="Estado" /> }}
+
+      <input type="text" required name="thumbnail" placeholder="Imagen" />
+
+      <input type="text" required name="code" placeholder="Código" />
+
+      <input type="number" required name="stock" placeholder="Stock" />
+
+      <textarea
+        name="description"
+        cols="28"
+        rows="4"
+        class="form-control"
+        placeholder="Descripcion"
+      ></textarea>
+      <button class="btn btn-outline-warning" type="submit">Crear</button>
+    </form>
+  </div>
+
+  <a
+    class="btn btn-outline-warning"
+    type="button"
+    id="showProds"
+    href="/static/home"
+  >Mostrar Productos</a>
+
+  <div class="productsContainer" id="prodContainer"></div>
+</div>
