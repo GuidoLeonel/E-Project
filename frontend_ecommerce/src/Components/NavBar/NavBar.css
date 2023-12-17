@@ -2,10 +2,5 @@
   width: 100vw;
   margin-bottom: 1.8rem;
   background-color: #202633;
-  padding-left: 2rem;
-}
-
-.navbar a,
-.navbar button {
-  color: #fafafa;
+  padding: 1.4rem 2rem;
 }

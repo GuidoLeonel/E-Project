@@ -27,7 +27,7 @@ productCtrl.getProdByIDFromDB = async (req, res) => {
     } else {
       res.status(404).send({
         respuesta: "Error en consultar Producto",
-        mensaje: "Not Found",
+        mensaje: "Producto no encontrado",
       });
     }
   } catch (error) {
@@ -69,8 +69,16 @@ productCtrl.createProductInDB = async (req, res) => {
 // ------ Actualizar un producto ------
 productCtrl.updateProductFromDB = async (req, res) => {
   const { id } = req.params;
-  const { title, description, price, stock, code, thumbnail, category } =
-    req.body;
+  const {
+    title,
+    description,
+    price,
+    stock,
+    status,
+    code,
+    thumbnail,
+    category,
+  } = req.body;
 
   try {
     const prod = await productModel.findByIdAndUpdate(id, {
@@ -79,6 +87,7 @@ productCtrl.updateProductFromDB = async (req, res) => {
       price,
       stock,
       code,
+      status,
       thumbnail,
       category,
     });
@@ -89,7 +98,7 @@ productCtrl.updateProductFromDB = async (req, res) => {
     } else {
       res.status(404).send({
         respuesta: "Error en actualizar producto",
-        mensaje: "Not Found",
+        mensaje: "Producto no encontrado",
       });
     }
   } catch (error) {
@@ -106,12 +115,11 @@ productCtrl.deleteProductFromDB = async (req, res) => {
   try {
     const prod = await productModel.findByIdAndDelete(id);
     if (prod) {
-      res.redirect("/static/home");
-      //res.status(200).send({ respuesta: "OK", mensaje: "Producto Borrado" });
+      res.status(200).send({ respuesta: "OK", mensaje: "Producto Borrado" });
     } else {
       res.status(404).send({
         respuesta: "Error en borrar producto",
-        mensaje: "Not Found",
+        mensaje: "Producto no encontrado",
       });
     }
   } catch (error) {

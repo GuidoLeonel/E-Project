@@ -1,3 +1,4 @@
+import "./NavBarListItem.css";
 import PropTypes from "prop-types";
 
 function NavBarListItem(props) {

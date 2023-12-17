@@ -8,9 +8,7 @@ function NavBarList() {
         <NavBarListItem title="Inicio" />
         <NavBarListItem title="Productos" />
         <NavBarListItem title="Contacto" />
-        <li className="nav-item dropdown">
-          <NavBarDropdown />
-        </li>
+        <NavBarDropdown />
       </ul>
     </div>
   );

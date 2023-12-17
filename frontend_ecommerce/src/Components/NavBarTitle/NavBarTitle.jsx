@@ -1,3 +1,5 @@
+import "./NavBarTitle.css";
+
 function NavBarTitle() {
   return (
     <>

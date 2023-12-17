@@ -1,0 +1,12 @@
+.nav-item a {
+  color: rgb(198, 208, 217);
+}
+.nav-item a:hover {
+  color: #aad2cb;
+}
+.nav-item a:focus {
+  color: #74cdbe;
+}
+.nav-item a:active {
+  color: #74cdbe;
+}

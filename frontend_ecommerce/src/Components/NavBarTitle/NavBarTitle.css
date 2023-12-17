@@ -1,0 +1,12 @@
+.navbar-brand {
+  color: rgb(198, 208, 217);
+}
+.navbar-brand:hover {
+  color: #aad2cb;
+}
+.navbar-brand:focus {
+  color: #74cdbe;
+}
+.navbar-brand:active {
+  color: #74cdbe;
+}

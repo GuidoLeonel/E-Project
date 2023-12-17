@@ -18,27 +18,13 @@ cartCtrl.getCartByID = async (req, res) => {
     } else {
       res.status(404).send({
         respuesta: "Error en consultar Carrito",
-        mensaje: "Not Found",
+        mensaje: "Carrito no encontrado",
       });
     }
   } catch (error) {
     res
       .status(400)
       .send({ respuesta: "Error en consultar carrito", mensaje: error });
-  }
-};
-
-// --- Creo un nuevo carrito ---
-cartCtrl.createNewCart = async (req, res) => {
-  try {
-    const cart = await cartsModel.create({});
-    res
-      .status(200)
-      .send({ respuesta: "Se creo un nuevo carrito", mensaje: cart });
-  } catch (error) {
-    res
-      .status(400)
-      .send({ respuesta: "Error en crear carrito", mensaje: error });
   }
 };
 
@@ -68,13 +54,13 @@ cartCtrl.addProductToCart = async (req, res) => {
       } else {
         res.status(404).send({
           respuesta: "Producto no existente",
-          mensaje: "Product Not Found",
+          mensaje: "Producto no encontrado",
         });
       }
     } else {
-      res.status(400).send({
+      res.status(404).send({
         respuesta: "Error en agregar producto a carrito",
-        mensaje: "Cart Not Found",
+        mensaje: "Carrito no encontrado",
       });
     }
   } catch (error) {
@@ -100,7 +86,7 @@ cartCtrl.deleteProductFromCart = async (req, res) => {
           mensaje: response,
         });
       } else {
-        res.status(400).send({ respuesta: "No se encontró dicho producto" });
+        res.status(404).send({ respuesta: "No se encontró dicho producto" });
       }
     }
   } catch (error) {
@@ -195,6 +181,7 @@ cartCtrl.purchase = async (req, res) => {
         prodToDelFromCart = await cartsModel.findByIdAndUpdate(cid, {
           $pull: { products: { id_prod: { $in: prodsWithOutStok } } },
         });
+        res.status(400).send({ response: "No hay suficiente stock" });
       }
       const cartUpdated = await cartsModel.findById(cid);
       res.status(200).send({

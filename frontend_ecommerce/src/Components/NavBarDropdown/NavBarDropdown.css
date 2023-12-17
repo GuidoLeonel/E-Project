@@ -1,3 +1,17 @@
 .dropdown-menu {
   background-color: #2e313d;
 }
+
+.dropdown a {
+  color: rgb(198, 208, 217);
+}
+.dropdown a:hover {
+  color: #aad2cb;
+}
+
+.nav-link.show:active {
+  color: #74cdbe;
+}
+.nav-link.show:focus {
+  color: #74cdbe;
+}
