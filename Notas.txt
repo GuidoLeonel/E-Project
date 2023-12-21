@@ -1,0 +1,3 @@
+# Uso de 'Estados' (Hooks) --> Retorna un array de dos elementos, el primero es el estado actual del objeto, y el segundo es una funcion que afecta el valor actual,
+    --> Cuando realizamos la desestructuracion del arreglo y lo igualamos a nuestro Hook le pasamos por parametro el valor inicial del estado de nuestro objeto
+    --> Quien renderiza la informacion que se va actualizando en tiempo real es el primer elemento del array desestructurado, dicha variable es la que se asignara al elemento que queremos que se vaya modificando.

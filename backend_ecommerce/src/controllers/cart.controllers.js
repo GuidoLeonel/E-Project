@@ -154,6 +154,7 @@ cartCtrl.addQuantityOrNewProd = async (req, res) => {
   }
 };
 
+// --- Comenzar compra, revision de stock y actualizacion de carrito para generar un ticket ---
 cartCtrl.purchase = async (req, res) => {
   try {
     const { cid } = req.params;
@@ -199,6 +200,7 @@ cartCtrl.purchase = async (req, res) => {
   }
 };
 
+// --- Generamos un Ticket de la compra efectuada. ---
 cartCtrl.createTicket = async (req, res) => {
   try {
     const { cid } = req.params;

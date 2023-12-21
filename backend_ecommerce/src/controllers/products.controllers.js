@@ -4,6 +4,7 @@ const productCtrl = {};
 
 // ######################## API ########################
 
+// --- Obtengo todos los productos de la BD ---
 productCtrl.getAllProdsFromDB = async (req, res) => {
   const { limit } = req.query;
   try {
@@ -16,7 +17,7 @@ productCtrl.getAllProdsFromDB = async (req, res) => {
   }
 };
 
-// ------ Buscar producto por ID ------
+// --- Buscar producto por ID ---
 productCtrl.getProdByIDFromDB = async (req, res) => {
   const { id } = req.params;
 

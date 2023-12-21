@@ -14,7 +14,7 @@ import flash from "connect-flash";
 import passport from "passport";
 import initializePassport from "./config/passport.js";
 import router from "./routes/index.routes.js";
-import nodemailer from "nodemailer";
+import { addLogger } from "./utils/loggers.js";
 
 // --- Server Config ---
 const app = express();
@@ -39,6 +39,27 @@ app.use(methodOverride("_method"));
 initializePassport();
 app.use(passport.initialize());
 //app.use(passport.session());
+app.use(addLogger);
+app.get("/debug", (req, res) => {
+  req.logger.debug("Hoola ");
+  res.send("ola debug");
+});
+app.get("/info", (req, res) => {
+  req.logger.info("Hoola");
+  res.send("ola info");
+});
+app.get("/fatal", (req, res) => {
+  req.logger.fatal("Hoola");
+  res.send("ola fatal");
+});
+app.get("/error", (req, res) => {
+  req.logger.error("Hoola");
+  res.send("ola error");
+});
+app.get("/warning", (req, res) => {
+  req.logger.warning("Hoola");
+  res.send("ola warning");
+});
 
 // --- Config cookie ---
 app.use(cookieParser(process.env.SIGNED_COOKIE)); // La cookie esta firmada

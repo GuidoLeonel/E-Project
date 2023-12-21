@@ -1,6 +1,7 @@
 import "dotenv/config";
 import jwt from "jsonwebtoken";
-//process.env.JWT_SECRET
+
+// Funcion que gestionar la creacion automatica de JWT
 export const generateToken = (user) => {
   const token = jwt.sign({ user }, process.env.JWT_SECRET, {
     expiresIn: "12h",
@@ -10,6 +11,7 @@ export const generateToken = (user) => {
   return token;
 };
 
+// Funcion para autoorizar tokens de JWT
 export const authToken = (req, res, next) => {
   //Consulto los headers --> consulto token que viene en headers "Authorization: value"
   const authHeader = req.headers.Authorization;

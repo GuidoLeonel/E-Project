@@ -5,6 +5,7 @@ const sessionCtrl = {};
 
 // ######################## API ########################
 
+// --- Estrategia local
 sessionCtrl.signUp = async (req, res) => {
   try {
     if (!req.user) {
@@ -41,15 +42,18 @@ sessionCtrl.signIn = async (req, res) => {
   }
 };
 
+// --- Registro de usuario con Git ---
 sessionCtrl.GithubStrategy = async (req, res) => {
   res.status(200).send({ response: "Usuario registrado" });
 };
 
+// --- Registro de usuario con Git (callback confirmacion) ---
 sessionCtrl.GithubStrategyCallback = async (req, res) => {
   req.session.user = req.user;
   res.status(200).send({ response: "Usuario logueado" });
 };
 
+// --- Deslogueo de usuario ---
 sessionCtrl.logOut = async (req, res) => {
   if (req.session) {
     req.session.destroy();

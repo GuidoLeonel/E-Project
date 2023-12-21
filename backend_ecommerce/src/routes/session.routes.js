@@ -6,30 +6,36 @@ import { passportError, authorization } from "../utils/messagesError.js";
 const sessionRouter = Router();
 
 // ######################## API ########################
+
+// Registro a traves de passport
 sessionRouter.post(
   "/api/sessions/register",
   passport.authenticate("register"),
   sessionCtrl.signUp
 );
 
+// Login a traves de passport
 sessionRouter.post(
   "/api/sessions/login",
   passport.authenticate("login"),
   sessionCtrl.signIn
 );
 
+// Registro de usuario con Github
 sessionRouter.get(
   "/api/sessions/github",
   passport.authenticate("github", { scope: ["user:email"] }),
   sessionCtrl.GithubStrategy
 );
 
+// Funcion callback para finalizar registro con Github
 sessionRouter.get(
   "/api/sessions/githubCallback",
   passport.authenticate("github"),
   sessionCtrl.GithubStrategyCallback
 );
 
+// -- Pruebas --
 sessionRouter.get(
   "/api/sessions/testJWT",
   passport.authenticate("jwt", { session: false }),
@@ -38,6 +44,7 @@ sessionRouter.get(
   }
 );
 
+// -- Pruebas --
 sessionRouter.get(
   "/api/sessions/current",
   passportError("jwt"),

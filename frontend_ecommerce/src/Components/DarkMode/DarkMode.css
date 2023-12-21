@@ -1,0 +1,9 @@
+.clear {
+  background-color: azure;
+  color: #333;
+}
+
+.dark {
+  background-color: #333;
+  color: azure;
+}

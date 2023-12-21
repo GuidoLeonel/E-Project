@@ -4,6 +4,7 @@ const userCtrl = {};
 
 // ######################## API ########################
 
+// --- Obtener todos los usuarios ---
 userCtrl.getAllUsersFromDB = async (req, res) => {
   try {
     const users = await userModel.find();
@@ -13,6 +14,7 @@ userCtrl.getAllUsersFromDB = async (req, res) => {
   }
 };
 
+// --- Obtener un usuario por su ID ---
 userCtrl.getUserByID = async (req, res) => {
   const { id } = req.params;
   try {
@@ -27,6 +29,7 @@ userCtrl.getUserByID = async (req, res) => {
   }
 };
 
+// --- Actualizar un usuario ---
 userCtrl.updateUserFromDB = async (req, res) => {
   const { id } = req.params;
   const { first_name, last_name, age, email, password } = req.body;
@@ -48,6 +51,7 @@ userCtrl.updateUserFromDB = async (req, res) => {
   }
 };
 
+// --- Eliminar un usuario ---
 userCtrl.deleteUserFromDB = async (req, res) => {
   const { id } = req.params;
   try {
