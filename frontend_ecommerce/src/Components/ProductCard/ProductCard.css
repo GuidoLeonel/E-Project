@@ -2,9 +2,15 @@
   width: 35vw;
   border-radius: 14px;
   padding: 2rem;
-  margin: auto;
+  margin: 3rem auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #eae6e6;
+}
+
+.addQuantityToCart {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
 }

@@ -1,0 +1,8 @@
+.dropdown-menu-cstm {
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-menu-cstm a {
+  text-decoration: none;
+}

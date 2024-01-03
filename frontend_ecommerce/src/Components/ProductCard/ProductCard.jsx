@@ -6,11 +6,13 @@ import ItemCount from "../ItemCount/ItemCount.jsx";
 
 function ProductCard() {
   return (
-    <div className="product-card">
+    <div className="product-card shadow">
       <ProductImage />
       <ProductInfo />
-      <ItemCount />
-      <ProductButton />
+      <div className="addQuantityToCart">
+        <ItemCount stock={10} init={1} />
+        <ProductButton />
+      </div>
     </div>
   );
 }
